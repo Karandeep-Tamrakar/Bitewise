@@ -14,6 +14,10 @@ const Footer = () => {
             <p className="text-background/70 leading-relaxed">
               Streamlining meal planning businesses with powerful, easy-to-use tools.
             </p>
+            <p className="text-background/70 text-sm mt-2">
+              Dover, Delaware, USA<br/>
+              engage@qualwebs.com
+            </p>
           </div>
           
           {/* Product */}

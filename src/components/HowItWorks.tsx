@@ -5,20 +5,20 @@ const steps = [
   {
     icon: Settings,
     number: "01",
-    title: "Quick Setup",
-    description: "Get started in minutes with our guided setup process. Import your existing data and customize your meal plans."
+    title: "Subscribe",
+    description: "Pick a plan; we spin up your branded site & app."
   },
   {
     icon: Zap,
     number: "02", 
-    title: "Launch & Operate",
-    description: "Start accepting orders immediately. Manage inventory, process payments, and track deliveries all in one place."
+    title: "Quick Set Up",
+    description: "Add menus, plans, delivery zones, payment methods, and printers."
   },
   {
     icon: TrendingUp,
     number: "03",
-    title: "Scale & Grow",
-    description: "Use our analytics to optimize your business. Add new meal plans, expand your reach, and increase revenue."
+    title: "Go Live",
+    description: "Take orders, print labels, and track deliveries from one dashboard."
   }
 ];
 

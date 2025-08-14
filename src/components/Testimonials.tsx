@@ -3,24 +3,24 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "Founder, NutriLife Meals",
+    name: "Amira S.",
+    role: "Meal Plan Kitchen, Dubai",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face",
-    content: "Bitewise transformed our business completely. We went from managing everything in spreadsheets to having a professional system that our customers love. Our order volume increased by 300% in just 6 months.",
+    content: "We launched in a week. Labels and kitchen checklists alone saved us hours daily.",
     rating: 5
   },
   {
-    name: "Michael Rodriguez",
-    role: "Director, Fresh Start Nutrition",
+    name: "Faisal K.",
+    role: "Nutrition Coach, Abu Dhabi",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
-    content: "The real-time tracking and automated notifications saved us countless hours every week. Our clients appreciate the transparency, and we can focus on what we do best - creating amazing meal plans.",
+    content: "Customers love the personalized plans and one-click reorders. Retention is up.",
     rating: 5
   },
   {
-    name: "Emily Johnson",
-    role: "Owner, Healthy Habits Catering",
+    name: "Ranya P.",
+    role: "Diet Service, Doha",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
-    content: "From payment processing to inventory management, Bitewise handles everything seamlessly. The analytics help us make better business decisions, and the mobile app keeps us connected on the go.",
+    content: "Bitewise centralized everything. No more WhatsApp chaos.",
     rating: 5
   }
 ];

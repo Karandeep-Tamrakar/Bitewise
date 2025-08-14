@@ -2,17 +2,44 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
-const features = [
-  "Unlimited orders and customers",
-  "Multi-platform app (mobile, tablet, desktop)",
-  "Real-time inventory management",
-  "Payment processing & POS system",
-  "Custom meal plan builder",
-  "Delivery tracking & notifications",
-  "Analytics & reporting dashboard",
-  "24/7 customer support",
-  "API access for integrations",
-  "Regular feature updates"
+const plans = [
+  {
+    name: "Starter",
+    price: "$99",
+    period: "/mo",
+    features: [
+      "Branded website & mobile app",
+      "Orders, payments, and customer profiles",
+      "Basic inventory & real-time alerts",
+      "Standard support",
+      "No yearly commitments"
+    ]
+  },
+  {
+    name: "Growth",
+    price: "$179",
+    period: "/mo",
+    features: [
+      "Everything in Starter",
+      "Custom meal-plan builder & daily selections",
+      "Delivery scheduling & live tracking",
+      "Chef labels + \"To the Kitchen\" checklists",
+      "Reports & analytics"
+    ],
+    popular: true
+  },
+  {
+    name: "Pro",
+    price: "$299",
+    period: "/mo",
+    features: [
+      "Everything in Growth",
+      "Multi-location & team roles",
+      "Priority support & onboarding",
+      "Advanced inventory (bundles, BOM)",
+      "Loyalty & coupons"
+    ]
+  }
 ];
 
 const Pricing = () => {
@@ -25,50 +52,56 @@ const Pricing = () => {
             <span className="text-primary"> Pricing</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            One plan, all features included. Scale your business without hidden costs.
+            Choose the plan that fits your business size and needs.
           </p>
         </div>
         
-        <div className="max-w-lg mx-auto">
-          <Card className="shadow-lg border-0 relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-hero"></div>
-            
-            <CardHeader className="text-center pb-8 pt-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-hero rounded-full mb-4 mx-auto">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <CardTitle className="text-3xl font-bold">Pro Plan</CardTitle>
-              <div className="mt-4">
-                <span className="text-5xl font-bold">$99</span>
-                <span className="text-muted-foreground ml-2">/month</span>
-              </div>
-              <p className="text-muted-foreground mt-2">
-                Everything you need to run your meal planning business
-              </p>
-            </CardHeader>
-            
-            <CardContent className="space-y-6">
-              <div className="space-y-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-5 h-5 bg-success rounded-full flex items-center justify-center">
-                      <Check className="w-3 h-3 text-white" />
-                    </div>
-                    <span className="text-foreground">{feature}</span>
-                  </div>
-                ))}
-              </div>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {plans.map((plan, index) => (
+            <Card key={index} className={`shadow-lg border-0 relative overflow-hidden ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
+              {plan.popular && (
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-hero"></div>
+              )}
+              {plan.popular && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                    Most Popular
+                  </span>
+                </div>
+              )}
               
-              <div className="pt-6 space-y-4">
-                <Button variant="cta" size="lg" className="w-full text-lg">
-                  Start Your Free Demo
-                </Button>
-                <p className="text-center text-sm text-muted-foreground">
-                  14-day free trial • No credit card required • Cancel anytime
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+              <CardHeader className="text-center pb-8 pt-8">
+                <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">{plan.price}</span>
+                  <span className="text-muted-foreground ml-1">{plan.period}</span>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-5 h-5 bg-success rounded-full flex items-center justify-center">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-foreground text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="pt-6">
+                  <Button 
+                    variant={plan.popular ? "cta" : "outline"} 
+                    size="lg" 
+                    className="w-full"
+                  >
+                    Start Your Free Demo
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
         
         <div className="text-center mt-12">
