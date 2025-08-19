@@ -8,56 +8,33 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Fresh greens and warm neutrals for health and trust */
     --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Fresh forest green primary */
-    --primary: 142 76% 36%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Warm cream secondary */
-    --secondary: 43 74% 66%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 98%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Light emerald accent */
-    --accent: 142 69% 58%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 142 76% 36%;
-
-    /* Custom design tokens */
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 98%;
-    
-    /* Hero gradient */
-    --gradient-hero: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(142, 69%, 58%) 100%);
-    
-    /* Subtle background gradient */
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
-    
-    /* Card shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(142, 76%, 36%, 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(142, 76%, 36%, 0.1), 0 2px 4px -1px hsl(142, 76%, 36%, 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(142, 76%, 36%, 0.1), 0 4px 6px -2px hsl(142, 76%, 36%, 0.05);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
 
