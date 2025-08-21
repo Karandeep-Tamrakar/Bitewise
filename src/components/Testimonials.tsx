@@ -4,31 +4,36 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Amira S.",
-    role: "Meal Plan Kitchen, Dubai",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face",
-    content: "We launched in a week. Labels and kitchen checklists alone saved us hours daily.",
-    rating: 5
+    role: "Muscle Fuel, Dubai",
+    image:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face",
+    content:
+      "We launched in a week. Labels and kitchen checklists alone saved us hours daily.",
+    rating: 5,
   },
   {
     name: "Faisal K.",
     role: "Nutrition Coach, Abu Dhabi",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
-    content: "Customers love the personalized plans and one-click reorders. Retention is up.",
-    rating: 5
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
+    content:
+      "Customers love the personalized plans and one-click reorders. Retention is up.",
+    rating: 5,
   },
   {
     name: "Ranya P.",
-    role: "Diet Service, Doha",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
+    role: "Meal Plan Kitchen, Doha",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
     content: "Bitewise centralized everything. No more WhatsApp chaos.",
-    rating: 5
-  }
+    rating: 5,
+  },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="reviews" className="py-20 px-10">
+      <div className="container mx-auto mt-10 px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Loved by <span className="text-primary">Nutrition Professionals</span>
@@ -53,11 +58,11 @@ const Testimonials = () => {
                 </blockquote>
                 
                 <div className="flex items-center gap-4">
-                  <img
+                  {/* <img
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover"
-                  />
+                  /> */}
                   <div>
                     <div className="font-semibold text-foreground">{testimonial.name}</div>
                     <div className="text-sm text-muted-foreground">{testimonial.role}</div>

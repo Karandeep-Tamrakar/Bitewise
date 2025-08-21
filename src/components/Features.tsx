@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { 
   ShoppingCart, 
   Truck, 
-  CreditCard, 
+  User, 
   Calendar, 
   Bell,
   BarChart3
@@ -20,9 +20,9 @@ const features = [
     description: "Real-time tracking of meal preparation, delivery status, and customer notifications."
   },
   {
-    icon: CreditCard,
-    title: "Payment Processing",
-    description: "Secure payment acceptance with multiple payment methods and automated billing management."
+    icon: User,
+    title: "Customer Management",
+    description: "Manage profiles, tracking customer preferences, loyalty programs, and collecting feedback."
   },
   {
     icon: Calendar,
@@ -43,12 +43,12 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <section id="features" className="py-20 px-10">
+      <div className="container mx-auto px-4 my-10">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Everything You Need to 
-            <span className="text-primary"> Scale Your Business</span>
+            <span className="text-primary"> Streamline Your Business</span>
           </h2>
           <p className="text-xl text-muted-foreground">
             Powerful features designed specifically for meal planning and nutrition businesses

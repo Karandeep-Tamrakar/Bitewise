@@ -25,13 +25,13 @@ const FinalCTA = () => {
             >
               Start Your Free Demo
             </Button>
-            <Button 
+            {/* <Button 
               variant="outline" 
               size="lg" 
               className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10 hover:border-white/50"
             >
               Schedule a Call
-            </Button>
+            </Button> */}
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white/90">

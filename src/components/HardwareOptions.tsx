@@ -21,8 +21,8 @@ const hardwareOptions = [
 
 const HardwareOptions = () => {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="hardware" className="py-20 px-10">
+      <div className="container mx-auto my-10 px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Hardware <span className="text-primary">Options</span>
@@ -31,17 +31,22 @@ const HardwareOptions = () => {
             Complete hardware solutions to streamline your operations
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {hardwareOptions.map((option, index) => (
-            <Card key={index} className="text-center shadow-md border-0 hover:shadow-lg transition-smooth">
+            <Card
+              key={index}
+              className="text-center shadow-md border-0 hover:shadow-lg transition-smooth"
+            >
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6">
                   <option.icon className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-2xl font-semibold mb-4">{option.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{option.description}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {option.description}
+                </p>
               </CardContent>
             </Card>
           ))}
