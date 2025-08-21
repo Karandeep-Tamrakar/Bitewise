@@ -18,7 +18,7 @@ const Pricing = () => {
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Flexible <span className="text-primary">Subscription Plans</span>{" "}
-            for Your Store
+            for Your Business
           </h2>
           <p className="text-lg text-foreground-secondary max-w-3xl mx-auto">
             Everything you need to run and grow your meat and grocery business.

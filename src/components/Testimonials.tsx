@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Amira S.",
-    role: "Muscle Fuel, Dubai",
+    role: "Muscle Fuel UAE, Dubai",
     image:
       "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face",
     content:
@@ -17,12 +17,12 @@ const testimonials = [
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
     content:
-      "Customers love the personalized plans and one-click reorders. Retention is up.",
+      "Customers love the personalized plans and one-click reorders.",
     rating: 5,
   },
   {
-    name: "Ranya P.",
-    role: "Meal Plan Kitchen, Doha",
+    name: "John H.",
+    role: "Meal Plan Kitchen, California",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
     content: "Bitewise centralized everything. No more WhatsApp chaos.",
