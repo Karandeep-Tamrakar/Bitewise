@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import TrialModal from "@/components/modals/TrialModal";
 
 const Header = () => {
+  const [isTrialOpen, setIsTrialOpen] = useState(false);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
@@ -33,12 +37,6 @@ const Header = () => {
             >
               Setup
             </a>
-            {/* <a
-              href="#pricing"
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Plans
-            </a> */}
             <a
               href="#reviews"
               className="text-foreground hover:text-primary transition-smooth"
@@ -55,13 +53,18 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="hidden sm:inline-flex">
+            {/* <Button variant="ghost" className="hidden sm:inline-flex">
               Sign In
+            </Button> */}
+            <Button variant="default" onClick={() => setIsTrialOpen(true)}>
+              Request a Demo
             </Button>
-            <Button variant="default">Start Free Demo</Button>
           </div>
         </div>
       </div>
+
+      {/* Trial Modal */}
+      <TrialModal isOpen={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
     </header>
   );
 };

@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
+import TrialModal from "@/components/modals/TrialModal";
 
 const Hero = () => {
+  const [isTrialOpen, setIsTrialOpen] = useState(false);
+
   return (
     <section
       id="home"
@@ -25,8 +29,13 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="default" size="lg" className="text-lg px-8 py-6">
-                Start Your Free Demo
+              <Button
+                variant="default"
+                size="lg"
+                className="text-lg px-8 py-6"
+                onClick={() => setIsTrialOpen(true)}
+              >
+                Request a Demo
               </Button>
               {/* <Button variant="outline" size="lg" className="text-lg px-8 py-6">
                 Watch Demo Video
@@ -60,14 +69,6 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
             </div>
 
-            {/* Floating elements */}
-            {/* <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-md p-4 hidden lg:block">
-              <div className="text-sm font-semibold text-foreground">
-                ✅ Orders managed
-              </div>
-              <div className="text-2xl font-bold text-primary">2,847</div>
-            </div> */}
-
             <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-md p-4 hidden lg:block">
               <div className="text-sm font-semibold text-foreground">
                 👤 Active users
@@ -79,6 +80,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Trial Modal */}
+      <TrialModal isOpen={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
     </section>
   );
 };
