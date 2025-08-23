@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { User, Mail, Phone, Store, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 interface TrialModalProps {
   isOpen: boolean;
@@ -87,13 +88,43 @@ const TrialModal = ({ isOpen, onClose }: TrialModalProps) => {
 
     setIsLoading(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      toast({
-        title: "✅ Request Submitted",
-        description: "Our team will contact you within 24 hours.",
+    try {
+      setIsLoading(true);
+
+      const response = await fetch(`${apiBaseUrl}submit-enquiry`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          store_name: formData.storeName, // match backend field names
+          city: formData.location,
+          enquiry_from: "Chopwise",
+        }),
       });
-      setIsLoading(false);
+
+      const data = await response.json(); // parse JSON response
+
+      if (!response.ok) {
+        // Show dynamic error message from backend
+        toast({
+          title: "❌ Failed",
+          description:
+            data.message || "Something went wrong. Please try again.",
+        });
+        return;
+      }
+
+      // Show dynamic success message from backend
+      toast({
+        title: "✅ Success",
+        description:
+          data.message || "Our team will contact you within 24 hours.",
+      });
+
       onClose();
       setFormData({
         name: "",
@@ -102,7 +133,32 @@ const TrialModal = ({ isOpen, onClose }: TrialModalProps) => {
         storeName: "",
         location: "",
       });
-    }, 2000);
+    } catch (error: any) {
+      // Catch network errors or unexpected issues
+      toast({
+        title: "❌ Failed",
+        description: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+
+    // // Simulate API call
+    // setTimeout(() => {
+    //   toast({
+    //     title: "✅ Request Submitted",
+    //     description: "Our team will contact you within 24 hours.",
+    //   });
+    //   setIsLoading(false);
+    //   onClose();
+    //   setFormData({
+    //     name: "",
+    //     email: "",
+    //     phone: "",
+    //     storeName: "",
+    //     location: "",
+    //   });
+    // }, 2000);
   };
 
   return (

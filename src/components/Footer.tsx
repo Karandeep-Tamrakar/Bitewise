@@ -10,24 +10,30 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    subcribed_from: "Bitewise",
+  });
   const { toast } = useToast();
   const [email, setEmail] = useState("");
 
-  const handleSubscribe = () => {
-    // Email regex validation
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!email) {
+    if (!formData.email) {
       toast({
-        title: "⚠️ Email Required",
-        description: "Please enter your email before subscribing.",
+        title: "⚠️ Subscription Failed",
+        description: "Email is required to subscribe.",
       });
       return;
     }
 
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(formData.email)) {
       toast({
         title: "❌ Invalid Email",
         description: "Please enter a valid email address.",
@@ -35,12 +41,47 @@ const Footer = () => {
       return;
     }
 
-    toast({
-      title: "🎉 Subscribed Successfully",
-      description: "You'll now receive the latest updates and insights.",
-    });
+    // Success case
+    try {
+      const response = await fetch(`${apiBaseUrl}subscribe`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setEmail(""); // reset input
+      const data = await response.json(); // parse JSON response
+
+      if (!response.ok) {
+        // Show dynamic error message from backend
+        toast({
+          title: "❌ Failed",
+          description:
+            data.message || "Something went wrong. Please try again.",
+        });
+        return;
+      }
+
+      // Show dynamic success message from backend
+      toast({
+        title: "✅ Success",
+        description:
+          data.message || "Our team will contact you within 24 hours.",
+      });
+
+      setFormData({
+        email: "",
+        subcribed_from: "Bitewise",
+      });
+    } catch (error: any) {
+      // Catch network errors or unexpected issues
+      toast({
+        title: "❌ Failed",
+        description: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
+    }
   };
 
   return (
@@ -66,8 +107,10 @@ const Footer = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="flex-1"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
                 <Button variant="default" size="sm" onClick={handleSubscribe}>
                   Subscribe
@@ -80,7 +123,90 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          {/* ... rest of your footer unchanged ... */}
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-3">
+              {["Home", "Features", "Setup", "Plans", "Reviews"].map((link) => (
+                <li key={link}>
+                  <a
+                    href={`#${link.toLowerCase()}`}
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info & Social Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <div className="space-y-4">
+              <a
+                href="mailto:engage@qualwebs.com"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-200 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors duration-200">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <span>engage@qualwebs.com</span>
+              </a>
+
+              <a
+                href="https://maps.google.com/?q=Dover,Delaware,USA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-200 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors duration-200">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <span>Dover, Delaware, USA</span>
+              </a>
+
+              {/* Social Links */}
+              <div className="pt-2">
+                <h5 className="font-medium mb-3">Follow Us</h5>
+                <div className="flex gap-2">
+                  {[
+                    {
+                      icon: Facebook,
+                      href: "https://www.facebook.com/qualwebs",
+                      label: "Facebook",
+                    },
+                    {
+                      icon: Instagram,
+                      href: "https://www.instagram.com/qualwebs.in/",
+                      label: "Instagram",
+                    },
+                    {
+                      icon: Twitter,
+                      href: "https://twitter.com/qualwebs1?lang=en",
+                      label: "Twitter",
+                    },
+                    {
+                      icon: Linkedin,
+                      href: "https://www.linkedin.com/company/qualwebs/mycompany/",
+                      label: "LinkedIn",
+                    },
+                  ].map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-200 flex items-center justify-center group"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom */}
