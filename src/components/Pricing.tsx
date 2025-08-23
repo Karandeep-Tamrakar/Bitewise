@@ -24,7 +24,8 @@ const Pricing = () => {
             for Your Business
           </h2>
           <p className="text-lg text-foreground-secondary max-w-3xl mx-auto">
-            Everything you need to run and grow your meat and grocery business.
+            Everything you need to run and grow your meal planning and nutrition
+            businesses
           </p>
         </div>
 
@@ -39,7 +40,8 @@ const Pricing = () => {
               BiteWise
             </h3>
             <p className="text-muted-foreground mb-6">
-              Complete business management solution for meat and grocery stores
+              Complete business management solution for meal planning and
+              nutrition businesses
             </p>
 
             {/* CTA Button */}
