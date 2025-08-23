@@ -166,7 +166,7 @@ const TrialModal = ({ isOpen, onClose }: TrialModalProps) => {
       <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
-            Start Your 30-Day Free Trial
+            Request a Live Walkthrough
           </DialogTitle>
           <p className="text-center text-foreground-secondary">
             No credit card required • Full access • Cancel anytime
@@ -267,10 +267,12 @@ const TrialModal = ({ isOpen, onClose }: TrialModalProps) => {
             className="button-primary w-full text-lg py-6"
             disabled={isLoading}
           >
-            {isLoading ? "Setting up your trial..." : "Start My Free Trial"}
+            {isLoading ? "Setting up your demo..." : "Book a Demo"}
           </Button>
-
-          <p className="text-xs text-center text-foreground-secondary">
+	<p className="text-xs text-left text-foreground-secondary mt-2">
+            <b>You will get a 1:1 conversation with our experts during the demo.</b>
+          </p>
+          <p className="text-xs text-left text-foreground-secondary mt-2">
             By starting your trial, you agree to our Terms of Service and
             Privacy Policy. No credit card required. Cancel anytime.
           </p>
