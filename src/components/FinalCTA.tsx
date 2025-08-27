@@ -29,7 +29,7 @@ const FinalCTA = () => {
               className="text-lg px-8 py-6 hover:scale-105 transform transition-bounce shadow-lg"
               onClick={() => setIsTrialOpen(true)}
             >
-              Request a Demo
+              Experience the Platform
             </Button>
             {/* <Button 
               variant="outline" 

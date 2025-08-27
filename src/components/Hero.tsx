@@ -18,7 +18,7 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Launch Your Branded
-                <span className="text-primary"> Meal Plan Platform </span>
+                <span className="text-primary"> Meal Prep Platform </span>
                 in Days
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
@@ -35,7 +35,7 @@ const Hero = () => {
                 className="text-lg px-8 py-6"
                 onClick={() => setIsTrialOpen(true)}
               >
-                Request a Demo
+                Discover How It Works
               </Button>
               {/* <Button variant="outline" size="lg" className="text-lg px-8 py-6">
                 Watch Demo Video

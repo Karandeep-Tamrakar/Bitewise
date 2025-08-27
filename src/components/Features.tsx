@@ -1,44 +1,50 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  ShoppingCart, 
-  Truck, 
-  User, 
-  Calendar, 
-  Bell,
-  BarChart3
+import {
+  ShoppingCart,
+  CreditCard,
+  UserCheck,
+  Gift,
+  Truck,
+  BarChart3,
 } from "lucide-react";
 
 const features = [
   {
     icon: ShoppingCart,
     title: "Order & Inventory Management",
-    description: "Effortlessly manage orders, track stock levels, and automate inventory updates across all platforms."
+    description:
+      "Efficiently manage orders, stock levels, and updates across locations.",
+  },
+  {
+    icon: CreditCard,
+    title: "Secure Payments",
+    description:
+      "Accept online payments, cards, wallets, and EBT payment setup easily.",
+  },
+  {
+    icon: UserCheck,
+    title: "Personalized Meal Plans",
+    description:
+      "Create fully customized or pre-defined plans for every customer.",
+  },
+  {
+    icon: Gift,
+    title: "Customer Reward Points",
+    description:
+      "Track and manage profiles, preferences, and reward points to boost loyalty.",
   },
   {
     icon: Truck,
-    title: "Meal Tracking & Delivery",
-    description: "Real-time tracking of meal preparation, delivery status, and customer notifications."
-  },
-  {
-    icon: User,
-    title: "Customer Management",
-    description: "Manage profiles, tracking customer preferences, loyalty programs, and collecting feedback."
-  },
-  {
-    icon: Calendar,
-    title: "Custom Meal Plans",
-    description: "Create pre-defined or fully personalized meal plans tailored to each client's dietary needs."
-  },
-  {
-    icon: Bell,
-    title: "Real-time Alerts",
-    description: "Instant notifications for new orders, delivery updates, and important business metrics."
+    title: "Scheduling & Delivery Tracking",
+    description:
+      "Allow flexible pickups and deliveries with real-time status updates.",
   },
   {
     icon: BarChart3,
-    title: "Analytics & Insights",
-    description: "Comprehensive reporting and analytics to help you make data-driven business decisions."
-  }
+    title: "Analytics & Business Insights",
+    description:
+      "Access detailed reports, dashboards, and actionable business insights.",
+  },
 ];
 
 const Features = () => {
@@ -47,17 +53,21 @@ const Features = () => {
       <div className="container mx-auto px-4 my-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Everything You Need to 
+            Everything You Need to
             <span className="text-primary"> Streamline Your Business</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Powerful features designed specifically for meal planning and nutrition businesses
+            Powerful features designed specifically for meal preparing and
+            nutrition businesses
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-smooth border-0 shadow-md">
+            <Card
+              key={index}
+              className="group hover:shadow-lg transition-smooth border-0 shadow-md"
+            >
               <CardContent className="p-8">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
@@ -66,8 +76,12 @@ const Features = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               </CardContent>

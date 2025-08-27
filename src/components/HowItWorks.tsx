@@ -6,20 +6,23 @@ const steps = [
     icon: Settings,
     number: "01",
     title: "Subscribe",
-    description: "Choose a plan that fits your business needs and get instant access to Bitewise."
+    description:
+      "Choose a plan for your business needs and get instant access to our platform.",
   },
   {
     icon: Zap,
-    number: "02", 
+    number: "02",
     title: "Quick Set Up",
-    description: "Add menus, plans, delivery zones, payment methods, and printers."
+    description:
+      "Easily add menus, meal plans, delivery zones, payment methods, and hardwares.",
   },
   {
     icon: TrendingUp,
     number: "03",
     title: "Go Live",
-    description: "Take orders, print labels, and track deliveries from one dashboard."
-  }
+    description:
+      "Take orders, print labels, and track deliveries from a single cloud dashboard.",
+  },
 ];
 
 const HowItWorks = () => {
@@ -31,7 +34,7 @@ const HowItWorks = () => {
             How <span className="text-primary">Bitewise</span> Works
           </h2>
           <p className="text-xl text-muted-foreground">
-            From setup to success in three simple steps
+            A cloud-based platform to manage your meal preparing business seamlessly
           </p>
         </div>
 

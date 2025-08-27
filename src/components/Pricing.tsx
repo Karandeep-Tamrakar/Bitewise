@@ -7,7 +7,7 @@ const Pricing = () => {
   const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   const features = [
-    "Branded website & mobile app",
+    "Custom Branded website & mobile app",
     "Orders, payments, and customer profiles",
     "Basic inventory & real-time alerts",
     "Standard support",
@@ -49,7 +49,7 @@ const Pricing = () => {
               className="w-full lg:w-auto bg-primary hover:opacity-90 transition-opacity shadow-red"
               onClick={() => setIsTrialOpen(true)}
             >
-              Request a Demo
+              Get a walkthrough
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
           </div>

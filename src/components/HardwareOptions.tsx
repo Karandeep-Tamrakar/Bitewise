@@ -4,19 +4,22 @@ import { Monitor, Tablet, Zap } from "lucide-react";
 const hardwareOptions = [
   {
     icon: Monitor,
-    title: "Counter Setup + Printer",
-    description: "Complete POS system with receipt and kitchen label printing for smooth order processing and fulfillment."
+    title: "Counter Setup & Printer",
+    description:
+      "Connect our system to print receipts and kitchen labels efficiently.",
   },
   {
     icon: Tablet,
     title: "Portable Tablets",
-    description: "Mobile tablets for staff to take orders on-the-go, manage inventory, and process payments anywhere."
+    description:
+      "Use your mobile, tablets with our platform to take orders and manage inventory anywhere.",
   },
   {
     icon: Zap,
-    title: "Self-ordering Kiosks",
-    description: "Customer-facing kiosks for self-service ordering, reducing wait times and increasing order accuracy."
-  }
+    title: "Self-Ordering Kiosks",
+    description:
+      "Integrate our platform for fast, accurate, customer-friendly self-service ordering.",
+  },
 ];
 
 const HardwareOptions = () => {
@@ -25,10 +28,10 @@ const HardwareOptions = () => {
       <div className="container mx-auto my-10 px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Hardware <span className="text-primary">Options</span>
+            Hardware <span className="text-primary">Integration</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Complete hardware solutions to streamline your operations
+            Integrate our platform with these devices for seamless operations
           </p>
         </div>
 

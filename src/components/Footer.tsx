@@ -213,7 +213,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 BiteWise. All rights reserved. Powered by QualWebs.
+              © 2025 BiteWise. All rights reserved. Powered by QualWebs.
             </p>
           </div>
         </div>
